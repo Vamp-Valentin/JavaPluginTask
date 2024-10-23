@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
+import org.bukkit.Sound;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
@@ -43,6 +44,7 @@ public class Game implements CommandExecutor, Listener {
                             case "YELLOW":
                             case "GREEN":
                                 openGameGUI(player);
+                                player.playSound(player.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1.0f, 1.0f);
                                 player.sendMessage("You selected "+ ChatColor.valueOf(colour)+ colour);
                                 break;
                             default:
@@ -108,14 +110,12 @@ public class Game implements CommandExecutor, Listener {
     public void onInventoryClick(InventoryClickEvent event) {
         if (event.getView().getTitle().equals("Game UI")) {
             event.setCancelled(true);
-
-            // Check if the clicked item is one of the colored panes
             ItemStack clickedItem = event.getCurrentItem();
             if (clickedItem != null && clickedItem.hasItemMeta() && clickedItem.getItemMeta().hasDisplayName()) {
                 String displayName = clickedItem.getItemMeta().getDisplayName();
                 if (displayName.contains("COLOR PANE")) {
-                    // Reopen the inventory with new random panes
                     Player player = (Player) event.getWhoClicked();
+                    player.playSound(player.getLocation(), Sound.ENTITY_ITEM_PICKUP, 1.0f, 1.0f);
                     openGameGUI(player);
                 }
             }
