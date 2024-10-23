@@ -7,6 +7,10 @@ import test.javaPTask.Services.PlayerService;
 import test.javaPTask.Commands.Game;
 import test.javaPTask.Commands.GameTabCompleter;
 
+import java.io.File;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
 public final class JavaPTask extends JavaPlugin implements Listener {
 
     private PlayerService playerService;
@@ -17,7 +21,7 @@ public final class JavaPTask extends JavaPlugin implements Listener {
         // Plugin startup logic
         playerService = new PlayerService();
         globalVariables = new GlobalVariables();
-        globalVariables.setOperatorList(playerService.loadOperatorList(getDataFolder().toPath().resolve("C:\\Users\\Vamp\\Documents\\AAAProject\\MinecraftServer\\Server\\ops.json")));
+        //lobalVariables.setOperatorList(playerService.loadOperatorList(Paths.get("Server\\ops.json")));
         playerService = new PlayerService(globalVariables);
         Game game = new Game(playerService);
         getCommand("game").setExecutor(game);
