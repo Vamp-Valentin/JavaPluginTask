@@ -4,4 +4,4 @@ main: test.javaPTask.JavaPTask
 api-version: '1.20'
 commands:
   game:
-    usage: /game
+    usage: /game <colour>
