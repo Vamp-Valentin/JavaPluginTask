@@ -1,4 +1,4 @@
-package test.javaPTask.Commands;
+package test.javaptask.commands;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;

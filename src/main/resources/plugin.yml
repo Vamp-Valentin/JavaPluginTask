@@ -1,6 +1,6 @@
 name: JavaPTask
 version: '1.0-SNAPSHOT'
-main: test.javaPTask.JavaPTask
+main: test.javaptask.JavaPTask
 api-version: '1.20'
 commands:
   game:

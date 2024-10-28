@@ -1,4 +1,4 @@
-package test.javaPTask.Entities;
+package test.javaptask.entities;
 
 public enum Colour {
     RED,

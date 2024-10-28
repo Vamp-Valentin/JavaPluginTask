@@ -3,7 +3,8 @@
     <output-path>$PROJECT_DIR$/out/artifacts/JavaPTask_jar</output-path>
     <root id="archive" name="JavaPTask.jar">
       <element id="module-output" name="JavaPTask" />
-      <element id="file-copy" path="$PROJECT_DIR$/src/main/resources/config.yml" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/google/code/gson/gson/2.10.1/gson-2.10.1.jar" path-in-jar="/" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/main/resources/plugin.yml" />
     </root>
   </artifact>
 </component>
